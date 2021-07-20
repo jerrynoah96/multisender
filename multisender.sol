@@ -35,7 +35,7 @@ contract multisender{
         _setToken(_tokenAddress, _decimal);
         
         for(uint256 i=0; i<_recipients.length; i++){
-            //dev should call transfer function in token contract
+            //front-end dev should call transfer function in token contract
                 tokenInstance.transferFrom(msg.sender,_recipients[i], _amounts[i]*10**tokenDecimal);
                 emit MultiSend(_tokenAddress, _recipients[i], _amounts[i]);
             
